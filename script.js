@@ -4,12 +4,18 @@ const addTaskButton = document.getElementById("add-task-btn");
 const saveTaskButton = document.getElementById("save-todo-btn");
 const listBox = document.getElementById("listBox");
 const saveInd = document.getElementById("saveIndex");
+// let button = document.getElementById("")
 
 // Challenge: Try and using your addTaskButton with a "keydown" eventlistener
 // and create a way to use the enter key to submit a new list item.
 text.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    addTaskButton.click();
+    if (addTaskButton.style.display == "block") {
+      addTaskButton.click();
+    } else if (saveTaskButton.style.display == "block") {
+      saveTaskButton.click();
+    }
+    console.log("click");
   }
 });
 todoArray = [];
